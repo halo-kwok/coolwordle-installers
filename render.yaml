@@ -17,4 +17,6 @@ services:
         value: "Wordle Desktop"
       - key: VITE_APP_DESCRIPTION
         value: "A web-based Wordle game"
+      - key: NODE_VERSION
+        value: 18
     autoDeploy: true

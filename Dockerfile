@@ -1,8 +1,8 @@
 # Use a lightweight Node.js image
 FROM node:18-alpine
 
-# Install serve
-RUN npm install -g serve
+# Install serve and vite globally
+RUN npm install -g serve vite
 
 # Set working directory
 WORKDIR /app
