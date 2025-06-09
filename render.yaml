@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: coolwordle
+    env: docker
+    plan: free
+    region: ohio
+    branch: main
+    dockerCommand: serve -s dist -l $PORT
+    healthCheckPath: /
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: VITE_APP_TITLE
+        value: "Wordle Desktop"
+      - key: VITE_APP_DESCRIPTION
+        value: "A web-based Wordle game"
+    autoDeploy: true
