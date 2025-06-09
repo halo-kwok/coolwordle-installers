@@ -1,24 +1,14 @@
 # Use a lightweight Node.js image
 FROM node:18-alpine
 
-# Install serve and vite globally
-RUN npm install -g serve vite
+# Install serve
+RUN npm install -g serve
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package.json .
-COPY package-lock.json* .
-
-# Install dependencies
-RUN npm install
-
-# Copy source files
-COPY . .
-
-# Build the app
-RUN npm run build
+# Copy the built files
+COPY dist ./dist
 
 # Expose port 3000
 EXPOSE 3000
